@@ -6,7 +6,7 @@
 /*   By: npiya-is <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/21 15:42:25 by npiya-is          #+#    #+#             */
-/*   Updated: 2023/06/23 16:52:55 by npiya-is         ###   ########.fr       */
+/*   Updated: 2023/06/23 19:03:51 by npiya-is         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ func solve(str string) uint {
 	var sum uint
 	var presum uint
 	for _, val := range str {
-		if !(bytes.IndexByte([]byte(vowels), byte(val)) >= 0) {
+		if !(bytes.IndexByte([]byte(vowels), byte(val)) >= 0) && val != ' ' {
 			sum += uint(val - ('a' - 1))
 			if sum > presum {
 				presum = sum
@@ -35,5 +35,5 @@ func solve(str string) uint {
 }
 
 func main() {
-	fmt.Println(solve("testsolve"))
+	fmt.Println(solve("test solve"))
 }
